@@ -1,0 +1,31 @@
+name: Experiment
+on: 
+  push:
+    branches:
+      - dev
+
+jobs:
+  job0:
+    uses: feazom/test_actions/.github/workflows/reusable.yml@main
+    secrets:
+      db_pass: ${{ secrets.SEC }}
+  job1:
+    name: Job 1
+    needs: job0
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Sleep and Run
+      run: |
+        echo "Sleeping for 10"
+        sleep 10
+
+  job2:
+    name: Job 2
+    needs: job1
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Dependant is Running
+      run: |
+        echo "Completed job 2, but triggering failure"
