@@ -19,6 +19,7 @@ jobs:
       run: |
         echo "Sleeping for 10"
         sleep 10
+        exit 1
 
   job2:
     name: Job 2
