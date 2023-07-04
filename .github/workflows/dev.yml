@@ -2,7 +2,7 @@ name: Experiment
 on: 
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   job0:
@@ -29,13 +29,3 @@ jobs:
     - name: Dependant is Running
       run: |
         echo "Completed job 2, but triggering failure"
-
-  job3:
-    name: Job 3
-    needs: job2
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Will never run
-      run: |
-        echo "If you can read this, the experiment failed"
