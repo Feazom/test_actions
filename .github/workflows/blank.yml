@@ -2,8 +2,11 @@ name: Experiment
 on: [push]
 
 jobs:
+  job0:
+    uses: feazom/test_actions/.github/workflows/reusable.yml@main
   job1:
     name: Job 1
+    needs: job0
     runs-on: ubuntu-latest
 
     steps:
