@@ -4,6 +4,8 @@ on: [push]
 jobs:
   job0:
     uses: feazom/test_actions/.github/workflows/reusable.yml@main
+    secrets:
+      db_pass: ${{ secrets.SEC }}
   job1:
     name: Job 1
     needs: job0
