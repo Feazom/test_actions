@@ -1,5 +1,9 @@
 on:
   workflow_call:
+    secrets:
+      db_pass:
+        description: 'Test'
+        required: true
 
 jobs:
   reusable_workflow_job:
