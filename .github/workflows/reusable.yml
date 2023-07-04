@@ -1,0 +1,11 @@
+on:
+  workflow_call:
+
+jobs:
+  reusable_workflow_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Sleep and Run
+      run: |
+        echo "Sleeping for 10"
+        sleep 10
