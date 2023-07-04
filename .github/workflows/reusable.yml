@@ -1,11 +1,8 @@
 on:
   workflow_call:
-    inputs:
-      config-path:
-        required: true
-        type: string
     secrets:
-      envPAT:
+      db_pass:
+        description: 'Test'
         required: true
 
 jobs:
